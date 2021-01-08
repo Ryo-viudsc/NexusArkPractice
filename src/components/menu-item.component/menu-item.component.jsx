@@ -17,6 +17,7 @@ const MenuItem = ({title, imageUrl, size, history, linkUrl, match}) => {
   //match.url => current url
 
 
+  //push(path, [state]) - (function) Pushes a new entry onto the history stack
   return(  
     <div className={`${size} menu-item`}
       onClick={() => history.push(`${match.url}${linkUrl}`)}
