@@ -1,6 +1,6 @@
 $sub-color: grey;
 $main-color: black;
-
+//resusable css file
 @mixin shrinkLabel {
   top: -14px;
   font-size: 12px;
@@ -27,7 +27,9 @@ $main-color: black;
     &:focus {
       outline: none;
     }
-
+    //whenever they select the input 
+    //we want to tagert the .form-input-label and 
+    //include the shrinkLable  inside of it too
     &:focus ~ .form-input-label {
       @include shrinkLabel();
     }
