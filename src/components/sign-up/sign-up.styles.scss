@@ -1,0 +1,14 @@
+.sign-up {
+
+  //we want all of those elements 
+  //vertically aligned
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+
+
+  .title{
+    margin: 10px 0;
+  }
+
+}
