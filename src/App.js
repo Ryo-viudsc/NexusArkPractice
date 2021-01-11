@@ -11,6 +11,8 @@ import {auth, createUserProfileDocument} from "./firebase/firebase.utils";
 // import { SnapshotViewIOS } from 'react-native';
 //we wanna use auth credentials through this root 
 import { connect } from 'react-redux';
+
+//we want action to pass into dispatch / setCurrentUser is action object that accepts the payload and return the actionType
 import { setCurrentUser } from './redux/user/user.actions';
 
 
@@ -43,11 +45,9 @@ class App extends React.Component {
         //the update of the database 
         //for the comopnentDidMount of the entire app
          userRef.onSnapshot(snapShot => {
-           setCurrentUser({
-              currentUser : {
+          setCurrentUser({
                 id : snapShot.id,
                 ...snapShot.data()
-              }
           });
 
         });
@@ -57,9 +57,6 @@ class App extends React.Component {
               setCurrentUser(userAuth);
                 //then current user is null 
       }
-
-
-
     });
   }
 
@@ -85,8 +82,11 @@ class App extends React.Component {
 //then anything starts with '/', 
 //it also gets rendered 
 
+//dispatch accepts the actionState with payload(user)
+//fire off the reducer accoring to the action.type
 
-
+//user parameter will be whatever 
+//setCurrentUser will accept as paramter like setCurrentUser(param)
 const mapDispatchToProps = dispatch => ({
   setCurrentUser: user => dispatch(setCurrentUser(user))
 });
@@ -102,10 +102,21 @@ const mapDispatchToProps = dispatch => ({
 // export default combineReducers({
 //   user: userReducer
 // });
+/////dispatch/////////////////////////////////////////
+
+// const userReducer = (state = INITIAL_STATE, action) => {
+//   switch (action.type) {
+//     case 'SET_CURRENT_USER':
+//       return {
+//         ...state,
+//         currentUser: action.payload
+//       };
+//     default:
+//       return state;
+//   }
+// };
 
 
-
-export default connect(
-  null,
-  mapDispatchToProps
-)(App);
+//in this app component, we don't need the state so 
+//there's no need to put the mapStateToProps
+export default connect(null,mapDispatchToProps)(App);
