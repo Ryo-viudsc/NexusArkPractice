@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import {  Switch, Route } from 'react-router-dom';
+import {  Switch, Route, Redirect } from 'react-router-dom';
 import HomePage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up';
@@ -72,7 +72,11 @@ class App extends React.Component {
       <Switch>
        <Route exact  path='/' component={HomePage} />
        <Route exact path='/shop' component={ShopPage} />
-       <Route exact path='/signin' component={SignInAndSignUpPage} />
+       <Route exact path='/signin' 
+               render={() => 
+                       this.props.currentUser
+                       ? (<Redirect to='/' />)
+                       : (<SignInAndSignUpPage />)} />
        </Switch>
      </div>
    )}
@@ -82,9 +86,12 @@ class App extends React.Component {
 //then anything starts with '/', 
 //it also gets rendered 
 
+const mapStateToProps = ({state}) => ({
+    currentUser: state.user.currentUser
+});
+
 //dispatch accepts the actionState with payload(user)
 //fire off the reducer accoring to the action.type
-
 //user parameter will be whatever 
 //setCurrentUser will accept as paramter like setCurrentUser(param)
 const mapDispatchToProps = dispatch => ({
@@ -117,6 +124,8 @@ const mapDispatchToProps = dispatch => ({
 // };
 
 
+
+
 //in this app component, we don't need the state so 
 //there's no need to put the mapStateToProps
-export default connect(null,mapDispatchToProps)(App);
+export default connect(mapStateToProps,mapDispatchToProps)(App);
