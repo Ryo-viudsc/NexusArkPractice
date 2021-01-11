@@ -86,8 +86,9 @@ class App extends React.Component {
 //then anything starts with '/', 
 //it also gets rendered 
 
-const mapStateToProps = ({state}) => ({
-    currentUser: state.user.currentUser
+
+const mapStateToProps = ({user}) => ({
+    currentUser: user.currentUser
 });
 
 //dispatch accepts the actionState with payload(user)
