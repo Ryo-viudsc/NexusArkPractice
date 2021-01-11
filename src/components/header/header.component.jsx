@@ -9,7 +9,7 @@ import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropdown from '../cart/cart-dropdown/cart-dropdown.component';
 
 
-const Header = ({currentUser}) => {
+const Header = ({currentUser, hidden}) => {
 
    return(
     <div className="header">
@@ -34,7 +34,12 @@ const Header = ({currentUser}) => {
           }
           <CartIcon />
       </div>
-      <CartDropdown />
+      { 
+        hidden ?  
+        (null)
+        :
+        (<CartDropdown />)
+      }
     </div>
    )
 }
@@ -43,8 +48,9 @@ const Header = ({currentUser}) => {
 //root reducer
 
 //this state will be root reducer (remenber  reducer is the function that accept the action(payload) and returns as state )
-const mapStateToProps = state => ({
-    currentUser: state.user.currentUser
+const mapStateToProps = ({user: {currentUser}, cart: {hidden}}) => ({
+    currentUser: currentUser,
+    hidden : hidden
 });
 
 export default connect(mapStateToProps)(Header); 

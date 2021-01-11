@@ -11,11 +11,16 @@
     width: 24px;
     height: 24px;
   }
-
+   
   .item-count {
-    position: absolute;
+    //absolute allows us to put the number 
+    //right on the shopping icon 
+
+    position: absolute; 
     font-size: 10px;
     font-weight: bold;
     bottom: 12px;
   }
+  
+   
 }
