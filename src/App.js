@@ -7,18 +7,11 @@ import HomePage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up';
 import Header from './components/header/header.component';
-import {auth} from "./firebase/firebase.utils";
-import {createUserProfileDocument} from "./firebase/firebase.utils";
-import { SnapshotViewIOS } from 'react-native';
+import {auth, createUserProfileDocument} from "./firebase/firebase.utils";
+// import { SnapshotViewIOS } from 'react-native';
 //we wanna use auth credentials through this root 
-
-
-//NOTE
-//1, Switch is like radio button 
-//when you are on a particular page, 
-//router doesn't render anything else but the current router 
-
-
+import { connect } from 'react-redux';
+import { setCurrentUser } from './redux/user/user.actions';
 
 
 //notice that Header is outside of the Switch 
@@ -26,33 +19,31 @@ import { SnapshotViewIOS } from 'react-native';
 //everytime the switch is executed
 class App extends React.Component {
 
-  constructor(){
-    super();
+  // constructor(){
+  //   super();
 
-    this.state = {
-      currentUser : null
-    }
-  };
+  //   this.state = {
+  //     currentUser : null
+  //   }
+  // };
 
   unsubscribeFromAuth = null;
 
   componentDidMount() {
+
+    const {setCurrentUser} = this.props;
+
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       
-
-      
       if(userAuth){
-        const userRef = createUserProfileDocument(userAuth);
+        const userRef = await createUserProfileDocument(userAuth);
         //to check if the database has any updates in the userAuth
 
         //you need the onsnapShot to listen to 
         //the update of the database 
         //for the comopnentDidMount of the entire app
-        (await userRef).onSnapshot(snapShot => {
-
-          //we have to put .data() 
-          //to actually see what's inside of the snapshot   
-          this.setState({
+         userRef.onSnapshot(snapShot => {
+           setCurrentUser({
               currentUser : {
                 id : snapShot.id,
                 ...snapShot.data()
@@ -63,9 +54,8 @@ class App extends React.Component {
        //end of if(userAuth) we also want to know 
        //if the user is sign-ined in or not as well 
       }else{
-
-        this.setState({currentUser: userAuth});
-        //then current user is null 
+              setCurrentUser(userAuth);
+                //then current user is null 
       }
 
 
@@ -81,7 +71,7 @@ class App extends React.Component {
   render(){
     return (
      <div> 
-       <Header currentUser={this.state.currentUser} />
+       <Header />
       <Switch>
        <Route exact  path='/' component={HomePage} />
        <Route exact path='/shop' component={ShopPage} />
@@ -97,4 +87,25 @@ class App extends React.Component {
 
 
 
-export default App;
+const mapDispatchToProps = dispatch => ({
+  setCurrentUser: user => dispatch(setCurrentUser(user))
+});
+
+//remember set currrent user looks like this
+// export const setCurrentUser = user => ({
+//   type: 'SET_CURRENT_USER',
+//   payload: user
+// });
+///////////////////////////////////////////////
+//also in the root reducer file
+// import userReducer from './user/user.reducer';
+// export default combineReducers({
+//   user: userReducer
+// });
+
+
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(App);
