@@ -10,12 +10,15 @@
   top: 90px;
   right: 40px;
   z-index: 5;
+  overflow: auto; 
+
+   //fix the scroll bvar 
 
   .cart-items {
     height: 240px;
     display: flex;
     flex-direction: column;
-    overflow: auto; 
+   
   }
 
   button {
@@ -23,4 +26,10 @@
     //stays at the bottom 
     margin-top: auto;
   }
+
 }
+
+
+
+
+
