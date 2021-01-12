@@ -12,6 +12,14 @@
   z-index: 5;
   overflow: auto; 
   
+
+  .emtpy-message {
+      font-size: 18px;
+      margin : 5em auto;
+  }
+
+
+
    //fix the scroll bvar 
   .cart-items {
     height: 240px;

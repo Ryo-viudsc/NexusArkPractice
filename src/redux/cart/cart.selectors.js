@@ -1,3 +1,6 @@
+// Selectors can compute derived data, allowing Redux to store the minimal possible state.
+// Selectors are efficient. A selector is not recomputed unless one of its arguments changes.
+
 //by using this,
 //we can optimize the perfomance 
 //especially for the value of state 
@@ -31,9 +34,24 @@ export const selectCartItems = createSelector(
   cart => cart.cartItems 
 )
 
+//this is a litlle different from the selector above 
+//since we don't need the complicated calculation
+export const selectCartHidden = createSelector(
+  [selectCart],
+  cart => cart.hidden
+)
+
 export const selectCartItemsCount = createSelector(
-  [selectCartItems],
+  [selectCartItems, selectCartHidden],
   cartItems => 
    cartItems.reduce(
     (accumalatedQuantity, cartItem )=> accumalatedQuantity + cartItem.quantity, 0)
+)
+
+
+export const selectCartTotal = createSelector(
+  [selectCartItems],
+  cartItems => 
+    cartItems.reduce(
+      (accumalatedTotal, cartItem) => accumalatedTotal +  cartItem.quantity * cartItem.price, 0)
 )

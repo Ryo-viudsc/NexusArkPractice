@@ -4,7 +4,7 @@ import './cart-icon.style.scss';
 import {connect} from 'react-redux';
 import {toggleCartHidden} from '../../redux/cart/cart.actions';
 import {selectCartItemsCount} from '../../redux/cart/cart.selectors';
-
+import {createStructuredSelector} from 'reselect';
 
 const CartIcon = ({toggleCartHidden, itemCount}) => (
   <div className='cart-icon' onClick={toggleCartHidden}>
@@ -14,14 +14,13 @@ const CartIcon = ({toggleCartHidden, itemCount}) => (
 );
 
 //pass the whole state 
-const mapStateToProps = (state) => ({
-    itemCount : selectCartItemsCount(state)
+const mapStateToProps = createStructuredSelector({
+    itemCount : selectCartItemsCount
 })
 
 // const mapStateToProps = (state) => ({
 //     itemCount : state.cart.cartItems.reduce( (accumalatedQuantity, cartItem) => accumalatedQuantity + cartItem.quantity, 0 )
 // });
-
 
 //remember dispatch is the function that accepts the 
 //action object and triggers the reducer 
