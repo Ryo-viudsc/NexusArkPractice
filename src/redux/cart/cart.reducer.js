@@ -6,6 +6,7 @@ const INITIAL_STATE = {
   cartItems : []
 };
 
+//state.cartItems can be written as {cartItems : {}}
 const cartReducer = (state = INITIAL_STATE, action) => {
 
     switch(action.type){
@@ -24,7 +25,6 @@ const cartReducer = (state = INITIAL_STATE, action) => {
       
       default: 
         return state; 
-
     }
 }
 
