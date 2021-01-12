@@ -8,7 +8,6 @@ export const toggleCartHidden = () => ({
 });
 
 
-
 //payload is optioanl since 
 //we just need toggle function 
 //we only need to change the value in reducer
@@ -20,3 +19,10 @@ export const toggleCartHidden = () => ({
 
   //reducer is the only one which 
   //directly accesses to the state
+
+
+//we need another action function (that takes payload and returns as the action object)
+export const addItem = item => ({
+    type: CartActionTypes.ADD_ITEM,
+    payload : item
+});

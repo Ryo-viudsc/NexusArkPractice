@@ -8,7 +8,6 @@ import {connect} from 'react-redux';
 import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropdown from '../cart/cart-dropdown/cart-dropdown.component';
 
-
 const Header = ({currentUser, hidden}) => {
 
    return(
@@ -23,6 +22,7 @@ const Header = ({currentUser, hidden}) => {
           <Link className="option" to="/shop">
             CONTACT
           </Link>
+
           {/* <Link className="option" to="/signin">
             SIGN-IN
           </Link> */}
@@ -43,14 +43,16 @@ const Header = ({currentUser, hidden}) => {
     </div>
    )
 }
-
 //function that allows us to access to the state 
 //root reducer
+
+
 
 //this state will be root reducer (remenber  reducer is the function that accept the action(payload) and returns as state )
 const mapStateToProps = ({user: {currentUser}, cart: {hidden}}) => ({
     currentUser: currentUser,
     hidden : hidden
 });
+
 
 export default connect(mapStateToProps)(Header); 
