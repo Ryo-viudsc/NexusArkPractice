@@ -11,14 +11,13 @@
   right: 40px;
   z-index: 5;
   overflow: auto; 
-
+  
    //fix the scroll bvar 
-
   .cart-items {
     height: 240px;
     display: flex;
     flex-direction: column;
-   
+
   }
 
   button {
@@ -30,6 +29,21 @@
 }
 
 
+::-webkit-scrollbar {
+  width: 12px;
+}
 
+::-webkit-scrollbar-track {
+  background: white;
+}
 
+::-webkit-scrollbar-button {
+  background: white;
 
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 30px;
+  border: 2px solid lightgrey;
+}
