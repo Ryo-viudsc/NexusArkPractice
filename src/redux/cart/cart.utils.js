@@ -23,3 +23,22 @@ export const addItemToCart = (cartItems, cartItemToAdd) => {
     //if existingCartItem is "undefined" 
     return [...cartItems, {...cartItemToAdd, quantity: 1}]; 
 };
+
+export const removeItemFromCart = (cartItems, cartItemToRemove) => {
+
+  const existingCartItem = cartItems.find(cartItem => cartItem.id === cartItemToRemove.id);
+
+  //if the curren item to remove is the last one,
+  //then, just filter out the cartItems to 
+  //eliminate just the current item using its id 
+  if(existingCartItem.quantity === 1) {
+      return cartItems.filter(cartItem => cartItem.id !== cartItemToRemove.id)
+  };
+
+  return cartItems.map(  
+    cartItem => 
+    cartItem.id === cartItemToRemove.id ?
+    {...cartItem, quantity : cartItem.quantity -1}
+    : cartItem
+  );
+}
