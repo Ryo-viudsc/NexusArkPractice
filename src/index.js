@@ -2,20 +2,27 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import { PersistGate } from 'redux-persist/integration/react';
+
 // import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 // import reportWebVitals from './reportWebVitals';
 
 import { BrowserRouter } from 'react-router-dom';
 
 import {Provider} from 'react-redux';
-import store from './redux/store';
+import {store, persistor}  from './redux/store';
+
+//persistor is being a persist version of store 
+
 
 ReactDOM.render(
  <Provider store={store}>
-  <BrowserRouter>    
+   <BrowserRouter>  
+   <PersistGate persistor={persistor}>  
    <App />
-  </BrowserRouter>
-   </Provider>
+   </PersistGate>
+   </BrowserRouter>
+  </Provider>
  ,document.getElementById('root')
 );
 

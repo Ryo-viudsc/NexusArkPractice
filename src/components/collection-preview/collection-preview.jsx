@@ -1,8 +1,11 @@
 import React, {Component} from 'react';
 import './collection-preview.styles.scss';
 
+import {connect} from 'react-redux';
 
 import CollectionItem from '../collection-items/collection-items.component';
+import {selectCollection} from '../../redux/shop/shop.selectors';
+
 
 //What data file looks like
 // id: 1,
@@ -32,10 +35,6 @@ const CollectionPreview = ({title, items}) => {
         </div>
     );
 }
-
-
-
-
 
 export default CollectionPreview; 
 

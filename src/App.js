@@ -19,20 +19,12 @@ import {createStructuredSelector} from 'reselect';
 import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selector';
 
-
-
 //notice that Header is outside of the Switch 
 //this way, react router doesn't have to re-render 
 //everytime the switch is executed
 class App extends React.Component {
 
-  // constructor(){
-  //   super();
 
-  //   this.state = {
-  //     currentUser : null
-  //   }
-  // };
 
   unsubscribeFromAuth = null;
 
@@ -75,8 +67,8 @@ class App extends React.Component {
      <div> 
       <Header />
       <Switch>
-       <Route exact  path='/' component={HomePage} />
-       <Route exact path='/shop' component={ShopPage} />
+       <Route exact path='/' component={HomePage} />
+       <Route path='/shop' component={ShopPage} />
        <Route exact path='/checkout' component={CheckoutPage} />
        <Route exact path='/signin' 
                render={() => 

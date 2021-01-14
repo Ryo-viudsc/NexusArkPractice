@@ -10,9 +10,6 @@ import './menu-item.styles.scss';
 //to dynamically generate the title into the menu component
 
 const MenuItem = ({title, imageUrl, size, history, linkUrl, match}) => {
-
-  console.log("history : " + JSON.stringify(history));
-  console.log("match: " + JSON.stringify(match));
   //match returns the current relative path 
   //match.url => current url
 

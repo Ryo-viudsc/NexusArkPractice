@@ -11,12 +11,10 @@ import {signInWithGoogle} from '../../firebase/firebase.utils';
 class SignIn extends React.Component {
     constructor(props){
       super(props);
-    
       this.state = {
         email:"",
         password: ""
       };
-
     }
 
 
@@ -45,7 +43,6 @@ class SignIn extends React.Component {
                      value={this.state.email} 
                      handleChange={this.handleChange}
                      required />
-             
                 <FormInput 
                      name="password" 
                      type="password" 
