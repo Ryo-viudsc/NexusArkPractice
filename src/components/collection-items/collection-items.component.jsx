@@ -1,11 +1,17 @@
+  
 import React from 'react';
+import { connect } from 'react-redux';
 
-import './collection-items.styles.scss';
-import CustomButton from '../custom-button/custom-button.component';
-import {connect} from 'react-redux';
-import {addItem} from '../../redux/cart/cart.actions';
+import { addItem } from '../../redux/cart/cart.actions';
 
-
+import {
+  CollectionItemContainer,
+  CollectionFooterContainer,
+  AddButton,
+  BackgroundImage,
+  NameContainer,
+  PriceContainer
+} from './collection-item.styles';
 // id: 1,
 // title: 'Hats',
 // routeName: 'hats',
@@ -24,19 +30,16 @@ const CollectionItem = ({item, addItem}) => {
    //explicit return function 
    //since we need to render multiple js comopnent out of this fucntion 
     return(
-      <div className="collection-item">
-          <div
-            className="image"
-            style={{backgroundImage: `url(${imageUrl})`}}
-          />
-          <div className='collection-footer'>
-              <span className="name">{name}</span>
-              <span className="price"> {price} </span>
-          </div>
-          <CustomButton onClick={() => addItem(item)} inverted> 
-              Add to cart 
-          </CustomButton>
-      </div>
+        <CollectionItemContainer>
+        <BackgroundImage className='image' imageUrl={imageUrl} />
+        <CollectionFooterContainer>
+          <NameContainer>{name}</NameContainer>
+          <PriceContainer>{price}</PriceContainer>
+        </CollectionFooterContainer>
+        <AddButton onClick={() => addItem(item)} inverted>
+          Add to cart
+        </AddButton>
+      </CollectionItemContainer>
     );
 }
 
