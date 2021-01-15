@@ -1,6 +1,3 @@
-import { createSelector } from 'reselect';
-
-
 
 // const INITIAL_STATE = {
  
@@ -15,11 +12,11 @@ import { createSelector } from 'reselect';
 //you slice the part out of it 
 //and memoize the part 
 
+import { createSelector } from 'reselect';
+
 const selectDirectory = state => state.directory;
 
-const selectDirectorySections = createSelector(
+export const selectDirectorySections = createSelector(
   [selectDirectory],
   directory => directory.sections
 );
-
-export default selectDirectorySections;

@@ -13,7 +13,6 @@ const MenuItem = ({title, imageUrl, size, history, linkUrl, match}) => {
   //match returns the current relative path 
   //match.url => current url
 
-
   //push(path, [state]) - (function) Pushes a new entry onto the history stack
   return(  
     <div className={`${size} menu-item`}
@@ -29,6 +28,7 @@ const MenuItem = ({title, imageUrl, size, history, linkUrl, match}) => {
      </div>
    </div>
   )
+  
 }
 
 
