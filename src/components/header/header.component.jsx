@@ -9,46 +9,43 @@ import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropdown from '../cart/cart-dropdown/cart-dropdown.component';
 
 
-
 import {createStructuredSelector} from 'reselect';
 import {selectCartHidden} from '../../redux/cart/cart.selectors';
 import {selectCurrentUser} from '../../redux/user/user.selector';
 
+import {HeaderContainer, LogoContainer, OptionsContainer, OptionDiv, OptionLink} from './header.styles'; 
 
 
 const Header = ({currentUser, hidden}) => {
 
    return(
-    <div className="header">
-      <Link to="/" className="logo-container">
+    <HeaderContainer>
+      <LogoContainer  to="/" >
          <Logo className="logo" />
-      </Link>
-      <div className="options">
-          <Link className="option" to="/shop">
+      </LogoContainer>
+      <OptionsContainer >
+          <OptionLink  to="/shop">
             SHOP
-          </Link>
-          <Link className="option" to="/shop">
+          </OptionLink>
+          <OptionLink className="option" to="/shop">
             CONTACT
-          </Link>
+          </OptionLink>
 
-          {/* <Link className="option" to="/signin">
-            SIGN-IN
-          </Link> */}
           {
             currentUser ? 
-            <div className='option' onClick={() => auth.signOut()}> SIGN-OUT</div>
+            <OptionDiv  onClick={() => auth.signOut()}> SIGN-OUT</OptionDiv>
             :
-            <Link className='option' to='/signin'> SIGN-IN</Link>
+            <OptionLink to='/signin'> SIGN-IN</OptionLink>
           }
           <CartIcon />
-      </div>
+      </OptionsContainer>
       { 
         hidden ?  
         (null)
         :
         (<CartDropdown />)
       }
-    </div>
+    </HeaderContainer>
    )
 }
 //function that allows us to access to the state 

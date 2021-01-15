@@ -19,6 +19,14 @@ import {createStructuredSelector} from 'reselect';
 import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selector';
 
+import styled from 'styled-components';
+
+// const Text = styled.div`
+    //border : ${({isActive}) => isActive ? `1px` : `3px green border`}
+// `;
+//inside, write <Text isActive> </Text>
+
+
 //notice that Header is outside of the Switch 
 //this way, react router doesn't have to re-render 
 //everytime the switch is executed
