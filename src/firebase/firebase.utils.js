@@ -58,9 +58,6 @@ export const addCollectionAndDocuments = (collectionKey, objectToAdd) => {
    // console.log(collectionRef);
     //firebase will make collectionRef for us 
 
-
-
-
     /////////////////////just to upload the data file to the cloud //////////////
     // const batch = firestore.batch();
     // objectToAdd.forEach(obj => {
@@ -70,15 +67,43 @@ export const addCollectionAndDocuments = (collectionKey, objectToAdd) => {
 
     // })
 
-    // batch.commit();
-//@return
-// A Promise resolved once all of the 
-// writes in the batch have been 
-// successfully written to the backend as 
-//an atomic unit. Note that it won't resolve while you're offline.
+        // batch.commit();
+    //@return
+    // A Promise resolved once all of the 
+    // writes in the batch have been 
+    // successfully written to the backend as 
+    //an atomic unit. Note that it won't resolve while you're offline.
 }
 
 
+export const convertCollectionsSnapshotToMap = (collections) => {
+
+  const transformedCollection = collections.docs.map(doc => {
+    const {title, items} = doc.data();
+    
+    //Encodes a text string as a valid Uniform Resource Identifier (URI)
+    return {
+      routeName : encodeURI(title.toLowerCase()),
+      id: doc.id, 
+      title,
+      items
+    }
+  })
+
+  console.log(transformedCollection);
+
+ return transformedCollection.reduce((accumulator, collection) => {
+    accumulator[collection.title.toLowerCase()] = collection;
+    return accumulator;
+  }, {})
+
+  //the result will be 
+  //accumulator : {
+   // hats : hatsCollection : [......],
+  //  shoes : shoesCollection : [.....],
+  //etc 
+
+}
 
 firebase.initializeApp(config);
 
