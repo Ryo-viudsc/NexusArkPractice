@@ -53,6 +53,32 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 }
 
 
+export const addCollectionAndDocuments = (collectionKey, objectToAdd) => {
+    const collectionRef = firestore.collection(collectionKey);
+   // console.log(collectionRef);
+    //firebase will make collectionRef for us 
+
+
+
+
+    /////////////////////just to upload the data file to the cloud //////////////
+    // const batch = firestore.batch();
+    // objectToAdd.forEach(obj => {
+    //     const newDocRef = collectionRef.doc(obj.title);
+    //     console.log(newDocRef);
+    //     batch.set(newDocRef,obj );
+
+    // })
+
+    // batch.commit();
+//@return
+// A Promise resolved once all of the 
+// writes in the batch have been 
+// successfully written to the backend as 
+//an atomic unit. Note that it won't resolve while you're offline.
+}
+
+
 
 firebase.initializeApp(config);
 

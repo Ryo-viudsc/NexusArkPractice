@@ -8,7 +8,11 @@ import ShopPage from './pages/shop/shop.component';
 import CheckoutPage from './pages/checkout/checkout.component';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up';
 import Header from './components/header/header.component';
-import {auth, createUserProfileDocument} from "./firebase/firebase.utils";
+import {
+        auth, 
+        createUserProfileDocument, 
+        //addCollectionAndDocuments
+  } from "./firebase/firebase.utils";
 // import { SnapshotViewIOS } from 'react-native';
 //we wanna use auth credentials through this root 
 import { connect } from 'react-redux';
@@ -18,6 +22,8 @@ import {createStructuredSelector} from 'reselect';
 //we want action to pass into dispatch / setCurrentUser is action object that accepts the payload and return the actionType
 import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selector';
+import { selectCollectionsForPreview} from './redux/shop/shop.selectors';
+
 
 import styled from 'styled-components';
 
@@ -38,7 +44,9 @@ class App extends React.Component {
 
   componentDidMount() {
 
-    const {setCurrentUser} = this.props;
+    const {setCurrentUser, 
+           collectionsArray
+          } = this.props;
 
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       
@@ -54,14 +62,17 @@ class App extends React.Component {
                 id : snapShot.id,
                 ...snapShot.data()
           });
-
         });
        //end of if(userAuth) we also want to know 
        //if the user is sign-ined in or not as well 
-      }else{
+      }
               setCurrentUser(userAuth);
                 //then current user is null 
-      }
+              //addCollectionAndDocuments('collections', collectionsArray.map(({title, items}) => ({title, items })));
+              // SHOP_DATA = {
+              //   hats: {
+              //     id: 1,
+              //     title: 'Hats',
     });
   }
 
@@ -94,7 +105,8 @@ class App extends React.Component {
 
 
 const mapStateToProps = createStructuredSelector({
-    currentUser: selectCurrentUser
+    currentUser: selectCurrentUser,
+    //collectionsArray : selectCollectionsForPreview
 });
 
 //dispatch accepts the actionState with payload(user)
