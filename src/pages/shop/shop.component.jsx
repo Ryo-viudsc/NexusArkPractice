@@ -40,11 +40,17 @@ class ShopPage extends React.Component{
 
       const CollectionRef = firestore.collection('collections');
 
-      //onSnapshot method 
-      //The listener can be cancelled by calling the function that is returned when onSnapshot is called.
-      //@return
-      //An unsubscribe function that can be called to cancel the snapshot listener.
-        CollectionRef.get().then(snapshot => {
+      // //MAIN METHOD : : fetch method 
+      // fetch('https://firestore.googleapis.com/v1/projects/clothesec-60551/databases/(default)/documents/collections')
+      // .then(responce => responce.json())
+      // .then(collections => console.log(collections))
+
+      // ALTERNATIVE METHOD : : onSnapshot method 
+      // The listener can be cancelled by calling the function that is returned when onSnapshot is called.
+      // @return
+      // An unsubscribe function that can be called to cancel the snapshot listener.
+      //   
+      CollectionRef.get().then(snapshot => {
         const collectionsMap = convertCollectionsSnapshotToMap(snapshot);
         updateCollections(collectionsMap); //grabbed the reducer from the redux 
         this.setState({loading : false});
