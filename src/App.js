@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 
 import {  Switch, Route, Redirect } from 'react-router-dom';
+import LandingPage from "./pages/landingpage/landing.page.component";
 import HomePage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
 import CheckoutPage from './pages/checkout/checkout.component';
@@ -85,7 +86,7 @@ class App extends React.Component {
      <div> 
       <Header />
       <Switch>
-       <Route exact path='/' component={HomePage} />
+       <Route exact path='/' component={LandingPage} />
        <Route path='/shop' component={ShopPage} />
        <Route exact path='/checkout' component={CheckoutPage} />
        <Route exact path='/signin' 
