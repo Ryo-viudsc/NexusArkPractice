@@ -1,0 +1,165 @@
+.body{
+     margin: 0px;
+     background: #1E242A;
+     background-color: black;
+
+    .main {
+      width : 100%;
+      height: 100%;
+      position: absolute;
+      overflow: hidden;
+      background-color: black;
+ 
+      
+          .box1 {
+            width: 530px;
+            height: 625px;
+            background-image:url('./pic1.png');
+            position: absolute;
+            bottom: -100%;
+            left: 30%;
+         
+            animation: anim 2s forwards, anim2 3s forwards 3s; 
+            border: 3px solid greenyellow;
+
+            // &:after {
+            //   content: '';
+            //   position: absolute;
+            //   width: 530px;
+            //   height: 625px;
+            //   background-image:url('./pic2.png');
+            //   left:0px;
+             
+            //   border: 3px solid red;
+
+            // }
+
+           }
+           
+           .box2 {
+            width: 100vh; 
+            height:auto;
+            font-family: 'Arial';
+            font-weight: bolder;
+            color: white; 
+            font-size: 10em;
+            font-weight: 500;
+            line-height: 130px;
+            position: absolute;
+            top: 250px;
+            left:100px;
+            overflow: hidden;
+            border: 3px solid purple;
+
+                  .text{
+                    position : relative; 
+                    left: -100%;
+                    animation: anim3 2s forwards 3s;
+                    z-index: 3;
+                    border: 3px solid yellow;
+                    margin: 10% 10% 10% 10%;
+                    font-size: 0.8em;
+                }
+            }
+  
+            
+            .box3 {
+              overflow: hidden;
+              border: 3px solid pink;
+
+              .container {
+                width: 100%;
+                position : absolute;
+                top: -100%;
+                animation: anim4 2s forwards 3s ;
+
+                .logo{
+                  float: left;
+                  margin-left: 100px;
+                  margin-top: 20px;
+
+                  .image {
+                      width : 50px;
+                  }
+
+                }
+  
+              }
+  
+             
+            }
+           
+            .menu {
+               font-family: 'Behnschrift Condenced';
+               font-size: 14px;
+               color: white; 
+               letter-spacing: 2px;
+               margin-right: 150px;
+               margin-top: 20px;
+               float : right;
+
+               .ul {
+                 list-style: none;
+                 .li{
+                   display: inline-block;
+                   margin-left: 100px;
+                 }
+               }
+
+             }
+
+      
+
+    }
+    @keyframes anim {
+       0%{
+         bottom : -100%;
+        
+
+       }
+       100% {
+         bottom: 0%;
+   
+       }
+
+    }
+
+    @keyframes anim2 {
+        from {
+            left:30%;
+            width: 530px;   
+            background-image:url('./pic1.png');
+          }
+        to {
+          left:50%;       
+          width: 530px;   
+          background-image:url('./pic2.png');
+        }
+    }
+  
+    
+    @keyframes anim3 {
+      from {
+          left: -100%;
+      }
+      to{
+          left:0%;
+      }
+
+    }
+
+    @keyframes anim4 {
+        from {
+          top:-100%;
+        }      
+        to {
+          top: 0%; 
+        }
+    }
+
+}
+
+
+
+
+
