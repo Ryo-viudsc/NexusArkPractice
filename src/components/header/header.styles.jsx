@@ -15,10 +15,10 @@ export const HeaderContainer = styled.div`
     margin-bottom: 25px;
 `;
 
-
 export const LogoContainer = styled(Link)`
     height: 100%;
     width: 70px;
+    padding: 20px 60px; 
     padding: 25px;
 `; 
 

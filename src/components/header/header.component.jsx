@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import './header.styles.scss';
 import {Link} from 'react-router-dom';
@@ -10,15 +10,16 @@ import CartDropdown from '../cart/cart-dropdown/cart-dropdown.component';
 
 
 import {createStructuredSelector} from 'reselect';
-import {selectCartHidden} from '../../redux/cart/cart.selectors';
+import {selectCartHidden, selectHovered} from '../../redux/cart/cart.selectors';
 import {selectCurrentUser} from '../../redux/user/user.selector';
 
 import {HeaderContainer, LogoContainer, OptionsContainer, OptionDiv, OptionLink} from './header.styles'; 
 
 
-const Header = ({currentUser, hidden}) => {
+const Header = ({currentUser, hidden, hovered}) => {
 
    return(
+   
     <HeaderContainer>
       <LogoContainer  to="/" >
          <Logo className="logo" />
@@ -38,12 +39,10 @@ const Header = ({currentUser, hidden}) => {
             <OptionLink to='/signin'> SIGN-IN</OptionLink>
           }
           <CartIcon />
-      </OptionsContainer>
-      { 
-        hidden ?  
-        (null)
-        :
-        (<CartDropdown />)
+       </OptionsContainer>
+      {
+          hidden ? (null)  : 
+        <CartDropdown />
       }
     </HeaderContainer>
    )
@@ -56,7 +55,8 @@ const Header = ({currentUser, hidden}) => {
 //this state will be root reducer (remenber  reducer is the function that accept the action(payload) and returns as state )
 const mapStateToProps = createStructuredSelector({
     currentUser: selectCurrentUser,
-    hidden : selectCartHidden
+    hidden : selectCartHidden,
+    hovered : selectHovered
 });
 
 

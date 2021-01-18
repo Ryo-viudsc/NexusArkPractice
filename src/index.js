@@ -11,7 +11,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import {Provider} from 'react-redux';
 import {store, persistor}  from './redux/store';
-
+import './fonts/arial-black.ttf';
 //persistor is being a persist version of store 
 
 

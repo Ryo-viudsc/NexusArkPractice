@@ -41,6 +41,14 @@ export const selectCartHidden = createSelector(
   cart => cart.hidden
 )
 
+export const selectHovered = createSelector(
+  [selectCart],
+  cart => cart.hovered
+)
+
+
+
+
 export const selectCartItemsCount = createSelector(
   [selectCartItems, selectCartHidden],
   cartItems => 

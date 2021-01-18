@@ -3,7 +3,8 @@ import {addItemToCart} from './cart.utils';
 import {removeItemFromCart} from './cart.utils';
 const INITIAL_STATE = {
   hidden : true,
-  cartItems : []
+  cartItems : [],
+  hovered : false
 };
 
 //state.cartItems can be written as {cartItems : {}}
@@ -11,12 +12,19 @@ const cartReducer = (state = INITIAL_STATE, action) => {
 
     switch(action.type){
 
-      case CartActionTypes.TOGGLE_CART_HIDDEN:
+       case CartActionTypes.TOGGLE_CART_HIDDEN:
         return {
           ...state, 
           hidden: !state.hidden
         };
-
+       
+       case CartActionTypes.HOVER_CART_HIDDEN: 
+          console.log("triggered"+ state.hovered)
+          return {
+            ...state,
+            hovered: !state.hovered  
+        };
+      
        case CartActionTypes.ADD_ITEM: 
         return {
           ...state,

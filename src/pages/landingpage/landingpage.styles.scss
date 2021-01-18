@@ -1,14 +1,17 @@
 .body{
      margin: 0px;
-     background: #1E242A;
+     padding: 0px;
+   //  background: #1E242A;
      background-color: black;
-
+    
     .main {
       width : 100%;
       height: 100%;
       position: absolute;
-      overflow: hidden;
+      overflow: visible;
       background-color: black;
+      padding: 0px;
+      margin: 0px;
  
       
           .box1 {
@@ -19,7 +22,7 @@
             bottom: -100%;
             left: 30%;
          
-            animation: anim 2s forwards, anim2 3s forwards 3s; 
+            animation: anim 2s forwards, anim2 2s forwards 2.5s; 
             border: 3px solid greenyellow;
 
             // &:after {
@@ -29,15 +32,12 @@
             //   height: 625px;
             //   background-image:url('./pic2.png');
             //   left:0px;
-             
             //   border: 3px solid red;
-
             // }
-
            }
            
            .box2 {
-            width: 100vh; 
+            width: 150vh; 
             height:auto;
             font-family: 'Arial';
             font-weight: bolder;
@@ -46,15 +46,17 @@
             font-weight: 500;
             line-height: 130px;
             position: absolute;
-            top: 250px;
-            left:100px;
+            padding: 0px 0px 0px 0px;
+            top: 50px;
+            left:0px;
             overflow: hidden;
             border: 3px solid purple;
 
                   .text{
+                    font-family: 'arial-black';
                     position : relative; 
                     left: -100%;
-                    animation: anim3 2s forwards 3s;
+                    animation: anim3 2s forwards 2.5s;
                     z-index: 3;
                     border: 3px solid yellow;
                     margin: 10% 10% 10% 10%;
@@ -81,16 +83,12 @@
                   .image {
                       width : 50px;
                   }
-
                 }
-  
               }
-  
-             
             }
            
             .menu {
-               font-family: 'Behnschrift Condenced';
+               font-family: 'arial-black';
                font-size: 14px;
                color: white; 
                letter-spacing: 2px;

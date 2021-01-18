@@ -7,6 +7,12 @@ export const toggleCartHidden = () => ({
   payload : null
 });
 
+export const hoverCartHidden = () => ({
+  type: CartActionTypes.HOVER_CART_HIDDEN,
+  payload: null
+});
+
+
 
 //payload is optioanl since 
 //we just need toggle function 
