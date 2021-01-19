@@ -1,4 +1,5 @@
 import React from 'react';
+import HomePage from '../homepage/homepage.component'
 import pic1 from './pic1.png';
 import pic2 from './pic2.png';
 //without header 
@@ -6,6 +7,7 @@ import './landingpage.styles.scss';
 const LandingPage = () => {
 
           return(   
+                  <>
                   <div className="body"> 
                     <div className="main">
                             <div className="box1" >
@@ -20,18 +22,11 @@ const LandingPage = () => {
                                     <div className="logo">
                                       <img className="image" src={pic1}  />
                                     </div>  
-                                    {/* <div className="menu">
-                                        <li>A</li>
-                                        <li>B</li>
-                                        <li>C</li>
-                                        <li>D</li>
-                                        <li>E</li>
-                                        <li>F</li>
-                                    </div> */}
                                   </div>
                             </div>
                       </div>  
-                </div>   
+                </div>           
+                </>
           )
 };
 

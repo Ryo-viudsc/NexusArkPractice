@@ -16,10 +16,12 @@ import {selectCurrentUser} from '../../redux/user/user.selector';
 import {HeaderContainer, LogoContainer, OptionsContainer, OptionDiv, OptionLink} from './header.styles'; 
 
 
+//TODO 
+//after sign-out
+//rerender the header component
 const Header = ({currentUser, hidden, hovered}) => {
 
-   return(
-   
+   return( 
     <HeaderContainer>
       <LogoContainer  to="/" >
          <Logo className="logo" />
@@ -31,10 +33,9 @@ const Header = ({currentUser, hidden, hovered}) => {
           <OptionLink className="option" to="/shop">
             CONTACT
           </OptionLink>
-
           {
             currentUser ? 
-            <OptionDiv  onClick={() => auth.signOut()}> SIGN-OUT</OptionDiv>
+            <OptionLink  to='/' onClick={ () => auth.signOut()}> SIGN-OUT</OptionLink>
             :
             <OptionLink to='/signin'> SIGN-IN</OptionLink>
           }
@@ -49,8 +50,6 @@ const Header = ({currentUser, hidden, hovered}) => {
 }
 //function that allows us to access to the state 
 //root reducer
-
-
 
 //this state will be root reducer (remenber  reducer is the function that accept the action(payload) and returns as state )
 const mapStateToProps = createStructuredSelector({

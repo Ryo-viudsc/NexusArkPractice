@@ -32,27 +32,17 @@ import styled from 'styled-components';
 // `;
 //inside, write <Text isActive> </Text>
 
-
 //notice that Header is outside of the Switch 
 //this way, react router doesn't have to re-render 
 //everytime the switch is executed
-const App = () => {
-
-
-  unsubscribeFromAuth = null;
-
-  componentDidMount() {
-
-    const {setCurrentUser, 
-           collectionsArray
-          } = this.props;
-
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
-      
+const App = ({setCurrentUser, currentUser}) => {
+ 
+   
+   useEffect(() => {
+     const unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if(userAuth){
         const userRef = await createUserProfileDocument(userAuth);
         //to check if the database has any updates in the userAuth
-
         //you need the onsnapShot to listen to 
         //the update of the database 
         //for the comopnentDidMount of the entire app
@@ -64,22 +54,16 @@ const App = () => {
         });
        //end of if(userAuth) we also want to know 
        //if the user is sign-ined in or not as well 
+        setCurrentUser(userAuth);
+      }});
+
+      return function cleanup () {
+          unsubscribeFromAuth();
       }
-              setCurrentUser(userAuth);
-                //then current user is null 
-              //addCollectionAndDocuments('collections', collectionsArray.map(({title, items}) => ({title, items })));
-              // SHOP_DATA = {
-              //   hats: {
-              //     id: 1,
-              //     title: 'Hats',
-    });
-  }
 
-  componentWillUnmount() {
-    this.unsubscribeFromAuth();
-  }
- 
-
+   },[setCurrentUser]);
+    
+   console.log(currentUser,"here")
 
     return (
      <div> 
@@ -90,7 +74,7 @@ const App = () => {
        <Route exact path='/checkout' component={CheckoutPage} />
        <Route exact path='/signin' 
                render={() => 
-                       this.props.currentUser
+                       currentUser
                        ? (<Redirect to='/' />)
                        : (<SignInAndSignUpPage />)} />
        </Switch>
@@ -101,6 +85,7 @@ const App = () => {
 //if that is just path
 //then anything starts with '/', 
 //it also gets rendered 
+
 
 
 const mapStateToProps = createStructuredSelector({

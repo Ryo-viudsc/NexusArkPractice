@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
 
 import {connect} from 'react-redux';
 //comopnent which displays each item in the catergory 
 import CollectionItem from '../../components/collection-items/collection-items.component';
 import {selectCollection} from '../../redux/shop/shop.selectors';
+import {firestore} from '../../firebase/firebase.utils';
 
 import {
   CollectionPageContainer,
@@ -13,8 +14,26 @@ import {
 } from './collections.styles';
 //params:
 // collectionId: "hats"
+
+//with useEffect, we can actually pass back a function from
+//the function that we pass 
 const CollectionPage = ({ collection }) => {
+
+  
+  //example: clean up function ====>>>> componentWillumount
+  useEffect(()=>{
+    const unsubscribeFromCollections = firestore
+            .collection('collections')
+            .onSnapshot(snapshot => console.log(snapshot));
+
+      return () => {
+          unsubscribeFromCollections();
+          console.log("I am unsubscribing")
+      }
+  }, []);
+
   const { title, items } = collection;
+
   return (
     <CollectionPageContainer>
       <CollectionTitle>{title}</CollectionTitle>

@@ -4,25 +4,28 @@
   height: 300px;
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 20px;
   border: 1px solid grey;
   background-color: white;
   top: 70px;
   right: 10px;
   z-index: 5;
   overflow: auto; 
-  border: 3px red solid;
   
   .close-dropdown {
-    border: 3px yellow solid;  
-    text-align: right;
-
+    padding-left: 12px;
     cursor: pointer;
+    padding: 10px;
+    font-size: 0.9em;
+    border: 1px solid grey;
+    text-align: center;
+    margin-bottom: 10px;
     opacity: 0.5;
 
     &:hover {
-        opacity:  1.0;
+      opacity: 1;
     }
+
   }
 
   .emtpy-message {
