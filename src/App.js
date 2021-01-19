@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './App.css';
 
 import {  Switch, Route, Redirect } from 'react-router-dom';
@@ -36,8 +36,7 @@ import styled from 'styled-components';
 //notice that Header is outside of the Switch 
 //this way, react router doesn't have to re-render 
 //everytime the switch is executed
-class App extends React.Component {
-
+const App = () => {
 
 
   unsubscribeFromAuth = null;
@@ -81,7 +80,7 @@ class App extends React.Component {
   }
  
 
-  render(){
+
     return (
      <div> 
       <Header />
@@ -96,7 +95,7 @@ class App extends React.Component {
                        : (<SignInAndSignUpPage />)} />
        </Switch>
      </div>
-   )}
+   )
 }
 //without "exact" keyword, 
 //if that is just path

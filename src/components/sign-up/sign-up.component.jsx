@@ -1,32 +1,40 @@
-import React from 'react';
+import React, {useState} from 'react';
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
 import {auth, createUserProfileDocument} from '../../firebase/firebase.utils';
 import './sign-up.styles.scss';
 
 
-class SignUp extends React.Component {
+const SignUp = () => {
+  
+  // constructor()
+  // {
+  //     super();
+  //     this.state = {
+  //       displayName : '',
+  //       email: '',
+  //       password: '',
+  //       confirmPassword: ''
+  //     }
+  // }
+   
+    const [userCredentials, setUserCredentials] = useState({
+            displayName : '',
+            email: '',
+            password: '',
+            confirmPassword: ''
+    });
+    //we need those values inside of the functional component scope
+    const {displayName, email, password, confirmPassword} = userCredentials;
 
-  constructor()
-  {
-      super();
-      this.state = {
-        displayName : '',
-        email: '',
-        password: '',
-        confirmPassword: ''
-      }
-  }
+   
+    const handleSubmit = async event => {
 
-  handleSubmit = async event => {
-      event.preventDefault();
-      const {displayName, email, password, confirmPassword} = this.state;
-
-
+        event.preventDefault();
+      
+      
         if(password !== confirmPassword){
             alert("password don't match");
-            
-
             //do nothing
             return; 
         }
@@ -34,11 +42,8 @@ class SignUp extends React.Component {
         try{
           //Creates a new user account associated
           // with the specified email address and password.
-          const { user } = await auth.createUserWithEmailAndPassword(email, password);
-
+         const { user } = await auth.createUserWithEmailAndPassword(email, password);
          await  createUserProfileDocument(user,{displayName});
-
-
         }catch (error) {    
             console.log(error.message);
         }
@@ -46,24 +51,19 @@ class SignUp extends React.Component {
 
 
 
-  handleChange = event => {
+    const  handleChange = event => {
 
     //note that event data has 
     //event.target.value 
     //event.target.name
-
     const {name, value} = event.target; 
-
     //dynamically set the name value 
-
-    this.setState({[name]:value});
+    setUserCredentials({...userCredentials, [name]:value});
 
   };
 
 
-  render(){
-
-    const {displayName, email, password, confirmPassword} = this.state;
+   // const {displayName, email, password, confirmPassword} = this.state;
 
       return(
         <div className='sign-up'>
@@ -71,13 +71,13 @@ class SignUp extends React.Component {
           <span >Sign up with your email and password</span>
             <form
               className='sign-up-form'
-              onSubmit={this.handleSubmit}
+              onSubmit={handleSubmit}
             >
             <FormInput
               type='text'
               name='displayName'
               value={displayName}
-              onChange={this.handleChange}
+              onChange={handleChange}
               label='Display Name'
               required
             />
@@ -85,7 +85,7 @@ class SignUp extends React.Component {
               type='emai;'
               name='email'
               value={email}
-              onChange={this.handleChange}
+              onChange={handleChange}
               label='Email'
               required
             />    
@@ -93,7 +93,7 @@ class SignUp extends React.Component {
               type='password'
               name='password'
               value={password}
-              onChange={this.handleChange}
+              onChange={handleChange}
               label='Password'
               required
             />     
@@ -101,7 +101,7 @@ class SignUp extends React.Component {
                 type='password'
                 name='confirmPassword'
                 value={confirmPassword}
-                onChange={this.handleChange}
+                onChange={handleChange}
                 label='confirmPassword'
                 required
            />
@@ -109,7 +109,6 @@ class SignUp extends React.Component {
           </form> 
         </div>
       )
-  }
 }
 
 
