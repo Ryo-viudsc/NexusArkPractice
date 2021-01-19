@@ -7,13 +7,16 @@ import {selectCartItemsCount} from '../../redux/cart/cart.selectors';
 import {createStructuredSelector} from 'reselect';
 import {hoverCartHidden} from '../../redux/cart/cart.actions';
 
+//TODO : 
+//delete button on the left-top side 
+//to toggle the cart
+
 
 const CartIcon = ({toggleCartHidden, hoverCartHidden , itemCount}) => {
   
-  
   return(
       <div className='cart-icon' 
-          onClick={toggleCartHidden}
+           onClick={toggleCartHidden}
        >
         <ShoppingIcon className='shopping-icon' />
         <span className='item-count'> {itemCount} </span>

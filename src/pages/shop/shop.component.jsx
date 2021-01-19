@@ -16,8 +16,6 @@ class ShopPage extends React.Component{
   //  state = {
   //    loading : true
   //  };
-    
-  
   // unsubscribeFromSnapshot = null;
 
   //note : firestore.collection is the method to fetch the reference of whatever comes in the ('')  
@@ -25,15 +23,11 @@ class ShopPage extends React.Component{
   //comopnentDidMount is called after the first rendering 
     const { fetchCollectionsStartAsync} = this.props;
     fetchCollectionsStartAsync();
-
-
   //     const {updateCollections} = this.props;
   //      // //MAIN METHOD : : fetch method 
   //     // fetch('https://firestore.googleapis.com/v1/projects/clothesec-60551/databases/(default)/documents/collections')
   //     // .then(responce => responce.json())
   //     // .then(collections => console.log(collections))
-
-      
   }
   
   render() {

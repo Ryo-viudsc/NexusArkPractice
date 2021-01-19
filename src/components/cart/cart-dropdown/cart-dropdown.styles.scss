@@ -4,21 +4,31 @@
   height: 300px;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 10px;
   border: 1px solid grey;
   background-color: white;
-  top: 40px;
+  top: 70px;
   right: 10px;
   z-index: 5;
   overflow: auto; 
+  border: 3px red solid;
   
+  .close-dropdown {
+    border: 3px yellow solid;  
+    text-align: right;
+
+    cursor: pointer;
+    opacity: 0.5;
+
+    &:hover {
+        opacity:  1.0;
+    }
+  }
 
   .emtpy-message {
       font-size: 18px;
       margin : 5em auto;
   }
-
-
 
    //fix the scroll bvar 
   .cart-items {

@@ -9,7 +9,6 @@ const LandingPage = () => {
                   <div className="body"> 
                     <div className="main">
                             <div className="box1" >
-
                             </div>
                             <div className="box2">
                                 <div className="text">

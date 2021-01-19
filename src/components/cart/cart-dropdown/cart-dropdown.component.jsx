@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import CustomButton from '../../custom-button/custom-button.component';
 import CartItem from '../../cart-item/cart-item.component';
 import './cart-dropdown.styles.scss';
@@ -9,11 +9,19 @@ import {withRouter} from 'react-router-dom';
 import {toggleCartHidden} from '../../../redux/cart/cart.actions';
 
 
+//https://jsfiddle.net/sergdenisov/3dyxb5g4/1/
 //destructure the cartItems from the props of the current component
 const CartDropdown = ({cartItems, history, dispatch}) => {
 
   return(
+    <>
     <div className='cart-dropdown'>
+    <div  
+       onClick={()=>{
+        dispatch(toggleCartHidden())}}
+       className='close-dropdown' > 
+       Close &#10005;
+   </div>
       <div className='cart-items' />
       {
         cartItems.length ? 
@@ -30,8 +38,8 @@ const CartDropdown = ({cartItems, history, dispatch}) => {
        GO TO CHECKOUT
       </CustomButton>
     </div>
+    </>
     )
-
 }
 
 //this way, cart dropdown component 
@@ -42,14 +50,11 @@ const mapStateToProps = createStructuredSelector({
 //reselect is literary "reselecting" the existing variable 
 //and re-use it instead of calucating multiple times 
 
-
 //OR 
 // const mapStateToProps = state =>({
 //     cartItems : state.cart.cartItems
 // })
 //NOTE: but this one gets re-render everytime the state changes 
-
-
 
 export default withRouter(connect(mapStateToProps)(CartDropdown)); 
 //if we don't supply the second argument, 
