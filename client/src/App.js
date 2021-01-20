@@ -23,7 +23,7 @@ import {createStructuredSelector} from 'reselect';
 import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selector';
 import { selectCollectionsForPreview} from './redux/shop/shop.selectors';
-
+import FooterPage from './components/footer/footer.component';
 
 import styled from 'styled-components';
 
@@ -78,6 +78,7 @@ const App = ({setCurrentUser, currentUser}) => {
                        ? (<Redirect to='/' />)
                        : (<SignInAndSignUpPage />)} />
        </Switch>
+       <FooterPage />
      </div>
    )
 }

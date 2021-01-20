@@ -21,6 +21,8 @@ import {HeaderContainer, LogoContainer, OptionsContainer, OptionDiv, OptionLink}
 //rerender the header component
 const Header = ({currentUser, hidden, hovered}) => {
 
+  
+
    return( 
     <HeaderContainer>
       <LogoContainer  to="/" >

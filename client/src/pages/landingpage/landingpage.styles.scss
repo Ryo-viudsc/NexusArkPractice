@@ -1,10 +1,8 @@
 .body{
      margin: 0px;
      padding: 0px;
-     background-color: white;
      width : 100vw;
      height : 100vh;
-    
 
 
     .main {
@@ -15,7 +13,8 @@
       background-color: white;
       padding: 0px;
       margin: 0px;
-   
+      animation : background_bg_anim 5.5s forwards;
+
  
       
           .box1 {
@@ -26,7 +25,7 @@
             bottom: -100%;
             left: 30%;
          
-            animation: anim 1s forwards, anim2 2s forwards 2s; 
+            animation: anim 3s forwards, anim2 2s forwards 2s, vanish 2s forwards 4s; 
   
 
             // &:after {
@@ -41,37 +40,40 @@
            }
            
            .box2 {
-            width: 150vh; 
+            width: 100vw; 
             height:auto;
             font-family: 'Arial';
             font-weight: bolder;
             color: white; 
             font-size: 10em;
+            
             font-weight: 500;
-            line-height: 130px;
+            line-height: auto;
             position: absolute;
             padding: 0px 0px 0px 0px;
             top: 50px;
-            left:0px;
             overflow: hidden;
-   
-
+            align-self: center;
+            justify-content: center;
+            
                   .text{
                     font-family: 'arial-black';
+                    text-align: center;
                     position : relative; 
                     left: -100%;
                     animation: anim3 2s forwards 2s;
                     z-index: 3;
                     color: black;
                     margin: 10% 10% 10% 10%;
-                    font-size: 0.8em;
+                    font-size: 0.7em;
+                
                 }
             }
   
             
             .box3 {
               overflow: hidden;
-              border: 3px solid pink;
+             
 
               .container {
                 width: 100%;
@@ -142,10 +144,13 @@
     
     @keyframes anim3 {
       from {
-          left: -30%;
+          left: -10%;
+          color: white;
       }
       to{
           left:0%;
+          right: auto;
+          color: black;
       }
 
     }
@@ -158,6 +163,32 @@
           top: 0%; 
         }
     }
+
+    @keyframes background_bg_anim {
+
+      from {
+        background-color : black;
+      }
+      to {
+        background-color : white;
+      }
+
+    }
+    
+    @keyframes vanish {
+
+      from {
+           opacity: 1.0;
+      }
+      to {
+        opacity: 0;
+      }
+
+    }
+
+
+
+
 
 }
 

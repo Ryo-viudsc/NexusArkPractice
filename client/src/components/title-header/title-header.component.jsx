@@ -8,9 +8,9 @@ const TitleHeader = () => {
     return (
         <>
           <div className="title-header" >
-              NEXUS ARK K
+              NEXUS ARK
           </div>
         </>
     )
 }
-export default TitleHeader
+export default TitleHeader;

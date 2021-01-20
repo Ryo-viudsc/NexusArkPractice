@@ -17,8 +17,8 @@ const StripeCheckoutButton = ({price}) => {
             url: 'payment', //will use whatever url at where we are 
             method: 'post',
             data: {
-                amount : priceForStripe,
-                token
+                amount : priceForStripe
+            //
             }
         })
         .then( response => {
