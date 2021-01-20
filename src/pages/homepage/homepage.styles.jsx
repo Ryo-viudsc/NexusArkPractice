@@ -4,5 +4,9 @@ export const HomePageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top:100%;
+  padding-left: 10vw;
+  padding-right:10vw;
+  background-color : green;
+  background-color: white;
+  
 `;

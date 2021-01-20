@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom';
 const OptionContainerStyles = css`
     padding: 10px 15px;
     cursor: pointer;
+    justify-content: space-between;
 `
 
 export const HeaderContainer = styled.div`

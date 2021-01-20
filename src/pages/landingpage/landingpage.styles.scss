@@ -1,30 +1,33 @@
 .body{
      margin: 0px;
      padding: 0px;
-     background-color: black;
+     background-color: white;
+     width : 100vw;
+     height : 100vh;
     
+
+
     .main {
       width : 100%;
-      height: 100%;
-      position: absolute;
-      overflow: visible;
-      background-color: black;
+      height: 80%;
+      position: relative;
+      overflow: hidden;
+      background-color: white;
       padding: 0px;
       margin: 0px;
-      border: 3px solid pink;
-
+   
  
       
           .box1 {
             width: 530px;
             height: 625px;
             background-image:url('./pic1.png');
-            position: absolute;
+            position: relative;
             bottom: -100%;
             left: 30%;
          
-            animation: anim 2s forwards, anim2 2s forwards 2.5s; 
-            border: 3px solid greenyellow;
+            animation: anim 1s forwards, anim2 2s forwards 2s; 
+  
 
             // &:after {
             //   content: '';
@@ -51,15 +54,15 @@
             top: 50px;
             left:0px;
             overflow: hidden;
-            border: 3px solid purple;
+   
 
                   .text{
                     font-family: 'arial-black';
                     position : relative; 
                     left: -100%;
-                    animation: anim3 2s forwards 2.5s;
+                    animation: anim3 2s forwards 2s;
                     z-index: 3;
-                    border: 3px solid yellow;
+                    color: black;
                     margin: 10% 10% 10% 10%;
                     font-size: 0.8em;
                 }
@@ -139,7 +142,7 @@
     
     @keyframes anim3 {
       from {
-          left: -100%;
+          left: -30%;
       }
       to{
           left:0%;

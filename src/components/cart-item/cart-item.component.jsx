@@ -14,5 +14,8 @@ const CartItem = ({item: {imageUrl, price, name, quantity}}) => (
   </div>
 );
 
+//        <span onClick={()=> {}} className='remove-button'>&#10005;</span>
+
+//clearItem(cartItem
 
 export default CartItem; 

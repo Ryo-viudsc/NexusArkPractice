@@ -3,6 +3,8 @@ import styled from 'styled-components';
 export const CollectionPageContainer = styled.div`
   display: flex;
   flex-direction: column;
+  margin: 70px;
+  font-family : "Arial, Helvetica";
 `;
 
 export const CollectionTitle = styled.h2`
@@ -17,4 +19,5 @@ export const CollectionItemsContainer = styled.div`
   & > div {
     margin-bottom: 30px;
   }
+
 `;

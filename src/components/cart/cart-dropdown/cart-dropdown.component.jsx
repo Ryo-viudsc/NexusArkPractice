@@ -16,12 +16,14 @@ const CartDropdown = ({cartItems, history, dispatch}) => {
   return(
     <>
     <div className='cart-dropdown'>
-    <div  
-       onClick={()=>{
-        dispatch(toggleCartHidden())}}
-       className='close-dropdown' > 
-        Close &#10005;
-    </div>
+    <CustomButton 
+                  className='checkout-button'
+                  onClick={()=>{
+                  history.push('/checkout');
+                  dispatch(toggleCartHidden());
+      }}> 
+      GO TO CHECKOUT</CustomButton>
+ 
       <div className='cart-items' />
       {
         cartItems.length ? 
@@ -30,14 +32,16 @@ const CartDropdown = ({cartItems, history, dispatch}) => {
           )))
         : 
         <span className='emtpy-message'>Your cart is empty</span>  
-      }
-      <CustomButton onClick={()=>{
-                  history.push('/checkout');
-                  dispatch(toggleCartHidden());
-      }}> 
-       GO TO CHECKOUT
-      </CustomButton>
+      } 
+         <div  
+            onClick={()=>{
+              dispatch(toggleCartHidden())}}
+            className='close-dropdown' > 
+              Close &#10005;
+          </div>
+   
     </div>
+
     </>
     )
 }

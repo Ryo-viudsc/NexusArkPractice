@@ -69,7 +69,7 @@ const App = ({setCurrentUser, currentUser}) => {
      <div> 
       <Header />
       <Switch>
-       <Route exact path='/' component={LandingPage} />
+       <Route exact path='/' component={HomePage} />
        <Route path='/shop' component={ShopPage} />
        <Route exact path='/checkout' component={CheckoutPage} />
        <Route exact path='/signin' 
