@@ -57,8 +57,8 @@ app.post('/payment',(req, res) => {
   };
   
 
-//req is holding all the info related to request 
-//res is how we respont the request 
+  //req is holding all the info related to request 
+  //res is how we respont the request 
 
   //we want to inform client cide app how successful the request was 
   stripe.charges.create(body, (stripeErr, stripeRes) => {

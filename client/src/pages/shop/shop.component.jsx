@@ -25,6 +25,7 @@ const ShopPage = ({fetchCollectionsStartAsync, match}) => {
   
 
     return (
+
       <div className='shop-page'>
         <Route
           exact
@@ -36,6 +37,7 @@ const ShopPage = ({fetchCollectionsStartAsync, match}) => {
           component={CollectionPageContainer}
         />
       </div>
+      
     );
 }
 

@@ -5,21 +5,20 @@ import { CollectionsOverviewContainer } from './collections-overview.styles';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import TitleHeader from "../title-header/title-header.component"
-
+import ParallaxImage from '../../parax/parallx-image';
 
 const CollectionsOverview = ({ collections }) => {
 
-
-  return(
-  <>  
-  <TitleHeader />
-  <CollectionsOverviewContainer>
-    {collections.map(({ id, ...otherCollectionProps }) => (
-      <CollectionPreview key={id} {...otherCollectionProps} />
-    ))}
-  </CollectionsOverviewContainer>
-  </>
-  )
+    return(
+      <>  
+      <ParallaxImage />
+      <CollectionsOverviewContainer>
+        {collections.map(({ id, ...otherCollectionProps }) => (
+          <CollectionPreview key={id} {...otherCollectionProps} />
+        ))}
+      </CollectionsOverviewContainer>
+      </>
+      )
 };
 
 const mapStateToProps = createStructuredSelector({

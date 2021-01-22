@@ -25,7 +25,6 @@ import {
 
 
 const CollectionItem = ({item, addItem}) => {
-    console.log("cgecjjung " + item)
     const { name, price, imageUrl} = item;
    //explicit return function 
    //since we need to render multiple js comopnent out of this fucntion 

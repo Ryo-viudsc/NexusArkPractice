@@ -8,6 +8,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 // import reportWebVitals from './reportWebVitals';
 
 import { BrowserRouter } from 'react-router-dom';
+import { ParallaxProvider } from 'react-scroll-parallax';
 
 import {Provider} from 'react-redux';
 import {store, persistor}  from './redux/store';
@@ -19,7 +20,9 @@ ReactDOM.render(
  <Provider store={store}>
    <BrowserRouter>  
    <PersistGate persistor={persistor}>  
+   <ParallaxProvider>
    <App />
+   </ParallaxProvider>
    </PersistGate>
    </BrowserRouter>
   </Provider>
