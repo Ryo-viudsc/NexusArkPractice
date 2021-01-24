@@ -10,6 +10,8 @@ import {
 } from './collection-preview.styles';
 
 const CollectionPreview = ({ title, items, history, match, routeName }) => (
+  <>
+
   <CollectionPreviewContainer>
     <TitleContainer onClick={() => history.push(`${match.path}/${routeName}`)}>
       {title.toUpperCase()}
@@ -22,6 +24,7 @@ const CollectionPreview = ({ title, items, history, match, routeName }) => (
         ))}
     </PreviewContainer>
   </CollectionPreviewContainer>
+  </>
 );
 
 export default withRouter(CollectionPreview);

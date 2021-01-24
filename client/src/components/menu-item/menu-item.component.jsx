@@ -34,10 +34,8 @@ const temp_pics_sources = [
 
 const MenuItem = ({id, title, imageUrl, size, history, linkUrl, match}) => {
  
+
    
-  
-    
-    console.log("testing", temp_pics_sources[id-1])
     const path = temp_pics_sources[id-1]
    return(
    <MenuItemContainer
@@ -45,7 +43,6 @@ const MenuItem = ({id, title, imageUrl, size, history, linkUrl, match}) => {
     onClick={() => history.push(`${match.url}${linkUrl}`)}>
     <BackgroundImageContainer
       className='background-image'
-      //imageUrl={temp_pics_sources[id-1]}
       style={{backgroundImage : `url(${temp_pics_sources[id-1]})` }}
       />
     <ContentContainer className='content'>

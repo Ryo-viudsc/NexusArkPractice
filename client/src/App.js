@@ -7,6 +7,10 @@ import HomePage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
 import CheckoutPage from './pages/checkout/checkout.component';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up';
+import PrivacyPolicy from './pages/privacy-policy/privacy-policy';
+import Agreement from './pages/privacy-policy/agreement';
+
+
 import Header from './components/header/header.component';
 import {
         auth, 
@@ -72,6 +76,8 @@ const App = ({setCurrentUser, currentUser}) => {
        <Route exact path='/' component={HomePage} />
        <Route path='/shop' component={ShopPage} />
        <Route exact path='/checkout' component={CheckoutPage} />
+       <Route exact path='/privacy-policy' component={PrivacyPolicy} />
+       <Route exact path='/agreement' component={Agreement} />  
        <Route exact path='/signin' 
                render={() => 
                        currentUser

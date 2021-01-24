@@ -1,20 +1,22 @@
 import React from "react";
 import './footer.styles.scss';
 import {FaInstagram, FaFacebookF, FaLine} from 'react-icons/fa'
-
+import {withRouter} from 'react-router';
 
 // <AiOutlineTwitter />
 // <AiOutlineFacebook />
 
-const FooterPage = () => {
+const FooterPage = ({history}) => {
 
+
+  
 
   return (
     <>
     <div className='footer'>
       <span className='card'>
-          <div className='text'> プライバシーポリシー </div>
-          <div className='text'> 特定商取引法に基づく表記 </div>
+          <div className='bottom-text' onClick={()=> { history.push(`/privacy-policy`)}} > プライバシーポリシー </div>
+          <div className='bottom-text' onClick={()=> { history.push(`/agreement`)}} > 特定商取引法に基づく表記 </div>
       </span>
       <span className='card'>
           <img className='icon'  height="25" src="https://shoplineimg.com/assets/footer/card_jcb.png"/>
@@ -36,4 +38,4 @@ const FooterPage = () => {
 //note : icon list
 
 
-export default FooterPage;
+export default withRouter(FooterPage);

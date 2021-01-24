@@ -4,6 +4,8 @@ export const CollectionPreviewContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 30px;
+ 
+ 
 `;
 
 export const TitleContainer = styled.h1`

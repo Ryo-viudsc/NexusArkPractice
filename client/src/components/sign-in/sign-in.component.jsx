@@ -42,7 +42,7 @@ const SignIn = () => {
  
     return (
       <SignInContainer>
-        <SignInTitle>I already have an account</SignInTitle>
+        <SignInTitle>I ALREADY HAVE AN ACCOUNT</SignInTitle>
         <span>Sign in with your email and password</span>
 
         <form onSubmit={handleSubmit}>
@@ -65,7 +65,7 @@ const SignIn = () => {
           <ButtonsBarContainer>
             <CustomButton type='submit'> Sign in </CustomButton>
             <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
-              Sign in with Google
+                   Google  
             </CustomButton>
           </ButtonsBarContainer>
         </form>

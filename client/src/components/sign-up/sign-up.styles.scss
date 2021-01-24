@@ -4,11 +4,24 @@
   //vertically aligned
   display: flex;
   flex-direction: column;
-  width: 30%;
-
+  width: 380px;
+  justify-content: center;
+  align-items: center;
+  
 
   .title{
     margin: 10px 0;
+    padding: 10px 0 0 0;
+    font-family: 'arial-black';
+    font-size: 0.9em;
   }
+  
+  .signup-button {
+    align-items: center;
+    justify-content:center;
+    margin-left: 15% ;
+    font-family: 'arial-black';
+  }
+
 
 }

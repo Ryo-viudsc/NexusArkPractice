@@ -67,7 +67,7 @@ const SignUp = () => {
 
       return(
         <div className='sign-up'>
-          <h2 className='title'> I do not have an account</h2>
+          <h2 className='title'> I DO NOT HAVE AN ACCOUNT</h2>
           <span >Sign up with your email and password</span>
             <form
               className='sign-up-form'
@@ -105,7 +105,7 @@ const SignUp = () => {
                 label='confirmPassword'
                 required
            />
-          <CustomButton type='submit'> SIGN UP</CustomButton>
+          <CustomButton className="signup-button" type='submit'> SIGN UP</CustomButton>
           </form> 
         </div>
       )

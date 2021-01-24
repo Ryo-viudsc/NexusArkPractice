@@ -21,9 +21,14 @@
     display: flex;
     
 
-    .text {
+    .bottom-text {
       font-size: 0.8em;
       margin-left: 0.5em;
+
+      &:hover{
+        cursor: pointer;
+      }
+
     }
 
     .icon {

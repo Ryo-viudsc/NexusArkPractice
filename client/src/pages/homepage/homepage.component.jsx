@@ -13,10 +13,11 @@ const HomePage = () => (
             <Directory />
           </HomePageContainer>
          <div style={{textAlign: "center", margin: "10% 20% 10% 20%", fontFamily:"Arial",   lineHeight: "3em"  }}> 
-          <bold style={{fontSize: "1.8em"}}>NEXUS</bold>＝繋がり, &nbsp; 
-          <bold style={{fontSize: "1.8em"}}>ARK</bold>＝歩く
+          <bold style={{fontSize: "1.8em", fontFamily: "arial-black"}}>NEXUS</bold>＝繋がり, &nbsp; 
+          <bold style={{fontSize: "1.8em", fontFamily: "arial-black"}}>ARK</bold>＝歩く
           今までの出会い、これからの出会い<br/>
-          ひとつひとつの繋がりを大切に、一歩一歩前進してほしいという願いを込めて<br/>
+          ひとつひとつの繋がりを大切に、<br/>
+          一歩一歩前進してほしいという願いを込めて<br/>
           着心地の良い質感、シンプルかつ遊び心のあるデザインで、<br/>
           皆様の未来に寄り添えるような服を提供していきます 
          </div>

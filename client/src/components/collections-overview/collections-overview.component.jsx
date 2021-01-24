@@ -11,6 +11,7 @@ const CollectionsOverview = ({ collections }) => {
 
     return(
       <>  
+      
       <ParallaxImage />
       <CollectionsOverviewContainer>
         {collections.map(({ id, ...otherCollectionProps }) => (
