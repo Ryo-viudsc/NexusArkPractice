@@ -49,11 +49,11 @@ export const CustomButtonContainer = styled.button`
   min-width: 165px;
   width: auto;
   height: 50px;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.1px;
   line-height: 50px;
-  padding: 0 35px 0 35px;
+  padding: 0 20px 0 20px;
   margin: 0 10px 0 10px;
-  font-size: 0.5em;
+  font-size: 0.3em;
   text-transform: uppercase;
   font-family: 'Open Sans Condensed';
   font-weight: bolder;
@@ -61,5 +61,6 @@ export const CustomButtonContainer = styled.button`
   display: flex;
   justify-content: center;
    font-family: 'arial-black';
+
   ${getButtonStyles} //calling javascript funcion here 
 `;

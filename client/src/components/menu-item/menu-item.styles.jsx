@@ -55,14 +55,16 @@ export const ContentContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid white;
-  background-color: white;
+
+  background-color: black;
   opacity: 0.8;
   position: absolute;
-
+  &:hover {
+    opacity: 0.6;
+    color: black;
+    
+  }
   
-
-
 `;
 
 export const ContentTitle = styled.span`
@@ -75,9 +77,13 @@ export const ContentTitle = styled.span`
   font-size: 1.5em;
   display: flex;
   overflow: hidden;
+  color: white;
+
 `;
 
 export const ContentSubtitle = styled.span`
   font-weight: lighter;
   font-size: 16px;
+  color: white;
+
 `;
