@@ -1,6 +1,6 @@
 import React from "react";
 import './footer.styles.scss';
-import {FaInstagram, FaFacebookF, FaLine} from 'react-icons/fa'
+import {FaInstagram, FaFacebookF, FaLine} from 'react-icons/fa';
 import {withRouter} from 'react-router';
 
 // <AiOutlineTwitter />

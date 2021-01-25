@@ -5,6 +5,8 @@ import Menu2 from '../../assets/pics/Menu2.jpg';
 import Menu3 from '../../assets/pics/Menu3.jpg';
 import Menu4 from '../../assets/pics/Menu4.jpg';
 import Menu5 from '../../assets/pics/Menu5.jpg';
+
+
 //the way of importing pics above needs to be refactored later 
 
 
@@ -34,10 +36,9 @@ const temp_pics_sources = [
 
 const MenuItem = ({id, title, imageUrl, size, history, linkUrl, match}) => {
  
-
-   
-    const path = temp_pics_sources[id-1]
+  const path = temp_pics_sources[id-1]
    return(
+   
    <MenuItemContainer
     size={size}
     onClick={() => history.push(`${match.url}${linkUrl}`)}>
@@ -49,7 +50,9 @@ const MenuItem = ({id, title, imageUrl, size, history, linkUrl, match}) => {
       <ContentTitle>{title.toUpperCase()}</ContentTitle>
       <ContentSubtitle>SHOP NOW</ContentSubtitle>
     </ContentContainer>
-  </MenuItemContainer>)
+  </MenuItemContainer>
+  
+  )
 };
 
 

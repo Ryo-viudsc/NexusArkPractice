@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { addItem } from '../../redux/cart/cart.actions';
+import Fade from 'react-reveal/Fade';
 
 import {
   CollectionItemContainer,
@@ -29,6 +30,7 @@ const CollectionItem = ({item, addItem}) => {
    //explicit return function 
    //since we need to render multiple js comopnent out of this fucntion 
     return(
+      <Fade bottom>
         <CollectionItemContainer>
         <BackgroundImage className='image' imageUrl={imageUrl} />
         <CollectionFooterContainer>
@@ -39,6 +41,7 @@ const CollectionItem = ({item, addItem}) => {
           Add to cart
         </AddButton>
       </CollectionItemContainer>
+      </Fade>
     );
 }
 

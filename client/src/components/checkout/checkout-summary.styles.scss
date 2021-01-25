@@ -1,0 +1,48 @@
+.CheckoutSummaryBox{
+  // width: 100%;
+  // min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid orange;
+  flex-basis: 100%;
+  flex: 1;
+
+  .CheckoutTitle {
+      font-size: 1.2em;
+  }
+
+  .CheckoutSubTitle {
+   // width: 100%;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+
+
+
+
+
+}
+
+
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+::-webkit-scrollbar-button {
+  background: white;
+
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 30px;
+  border: 2px solid lightgrey;
+}
