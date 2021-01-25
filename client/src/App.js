@@ -5,7 +5,7 @@ import {  Switch, Route, Redirect } from 'react-router-dom';
 import LandingPage from "./pages/landingpage/landing.page.component";
 import HomePage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
-import CheckoutPage from './pages/checkout/checkout.component';
+import CheckoutPage from './pages/checkout/checkout-overview';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up';
 import PrivacyPolicy from './pages/privacy-policy/privacy-policy';
 import Agreement from './pages/privacy-policy/agreement';

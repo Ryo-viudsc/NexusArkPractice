@@ -1,0 +1,33 @@
+.checkout-page-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 65vh;
+   
+
+
+    .checkout-page-column-left {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 100%;
+      height: 70vh;
+      width: 35%;
+      flex: 1;
+      margin-left: 15%;
+      background-color: grey;
+      overflow: scroll;
+
+    }
+
+    .checkout-page-column-right {
+      display: flex;
+      height: 70vh;
+      width: 35%;
+      flex-direction: column;
+      flex-basis: 100%;
+      flex: 1;
+      background-color: lightgrey;
+      overflow: scroll;
+    }
+}

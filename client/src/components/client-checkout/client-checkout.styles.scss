@@ -1,0 +1,42 @@
+
+.client-checkout {
+      width: 35vw;
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      margin: 0 0 0 0;
+      flex-basis: 100%;
+      flex: 1;
+    
+ 
+
+    .checkout-header {
+      width: 100%;
+      padding: 5px;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid darkgrey;
+
+      .header-block {
+        text-transform: capitalize;
+        width: 24%;
+
+        &:last-child {
+          width: 8%;
+        }
+      }
+    }
+    button {
+      margin-left: auto;
+      margin-top: auto;
+    }
+
+    .cart-items-row {
+        min-height: 40%;
+        justify-content: center;        
+
+
+    }
+
+}
