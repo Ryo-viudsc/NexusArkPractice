@@ -1,7 +1,10 @@
 {
+  "homepage": "http://Ryo-viudsc.github.io/NexusArkPractice",
   "name": "crwn-clothing-server",
   "version": "1.0.0",
   "scripts": {
+    "predeploy" : "npm run build",
+    "deploy" : "gh-pages -d build",
     "client": "cd client && yarn start",
     "server": "nodemon server.js",
     "build": "cd client && npm run build",

@@ -4,30 +4,31 @@
     flex-wrap: wrap;
     width: 100%;
     height: 65vh;
-   
-
+    justify-content: space-between;
+    margin-top: 5%;
 
     .checkout-page-column-left {
       display: flex;
       flex-direction: column;
       flex-basis: 100%;
       height: 70vh;
-      width: 35%;
+      width: 980px;
       flex: 1;
-      margin-left: 15%;
-      background-color: grey;
+      justify-content: center;
       overflow: scroll;
-
+      margin-right: 5%;
+      margin-left: 10%;
     }
 
     .checkout-page-column-right {
       display: flex;
       height: 70vh;
-      width: 35%;
+      width: 980px;
       flex-direction: column;
       flex-basis: 100%;
       flex: 1;
-      background-color: lightgrey;
       overflow: scroll;
+      margin: 10px;
+  
     }
 }

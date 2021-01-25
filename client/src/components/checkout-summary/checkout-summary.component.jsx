@@ -29,15 +29,14 @@ const CheckoutSummary = ({cartItems, totals}) => {
               <span className='CheckoutSubTitle'> 
                 Taxes  <div>  0000  </div>   
               </span>
+              <div className="checkout-buttons-rows" >
+                        <CustomButton className="checkout-buttons-columns" onClick={()=>{ }}> Guest Checkout </CustomButton>
+                        <CustomButton className="checkout-buttons-columns" onClick={()=>{ }}> Member Checkout</CustomButton>
+              </div>
               <span className='CheckoutSubTitle'> 
                 Total  <div>   `${totals}`  </div>
               </span>
-              <span >   
-              <CustomButton onClick={()=>{ }}> Guest Checkout </CustomButton>
-              </span>
-              <span > 
-              <CustomButton onClick={()=>{ }}> Member Checkout</CustomButton>
-              </span>
+          
           </div>
     );
 }

@@ -8,19 +8,20 @@
       margin: 0 0 0 0;
       flex-basis: 100%;
       flex: 1;
-    
- 
+      padding: 5%;
+      margin-left: 15%;
 
     .checkout-header {
       width: 100%;
-      padding: 5px;
+      padding: 10px;
       display: flex;
       justify-content: space-between;
       border-bottom: 1px solid darkgrey;
+      font-size: 0.8em;
 
       .header-block {
         text-transform: capitalize;
-        width: 24%;
+        width: 25vw;
 
         &:last-child {
           width: 8%;
@@ -34,9 +35,7 @@
 
     .cart-items-row {
         min-height: 40%;
-        justify-content: center;        
-
-
+        justify-content: center;     
     }
 
 }
