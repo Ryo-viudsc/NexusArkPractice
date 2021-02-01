@@ -2,7 +2,7 @@
   "name": "crwn-clothing",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://Ryo-viudsc.github.io/NexusArkPractice",
+  "homepage": "https://Ryo-viudsc.github.io/NexusArkPractice",
   "proxy": "http://localhost:3000",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
@@ -48,7 +48,7 @@
     "workbox-streams": "^5.1.3"
   },
   "scripts": {
-    "predeploy": "npm run build",
+    "predeploy": "yarn run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
